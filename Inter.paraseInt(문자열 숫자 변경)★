@@ -1,0 +1,19 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Nume {
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("숫자 형태로 문자를 입력");
+		String input = sc.nextLine();
+		int num = Integer.parseInt(input);
+		int sum = 0;
+		while(num != 0) {
+			sum += num % 10;
+			num = (num / 10);
+			
+		}
+		System.out.println(sum);
+		
+	}
+}
