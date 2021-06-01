@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class Grade {
+	public class hak{
+		void inhak() {
+			Scanner sc = new Scanner(System.in);//입력받기위한 선언 import java.util.Scanner;
+			String hak=" ";
+			System.out.println("점수를 입력하세요");
+			int grade = sc.nextInt();
+			if(grade >= 100 || grade <0) {
+				System.out.println("점수를 잘못 입력하였습니다.");
+			}else if(grade >= 90) {
+				if(grade>=98) {
+					hak = "A+";
+				}else if(grade<=94) {
+					hak = "A-";
+				}else {
+					hak = "A0";
+				}
+				//System.out.println("A학점 입니다.");
+			}else if(grade >= 80) {
+				if(grade>=88) {
+					hak = "B+";
+				}else if(grade<=84) {
+					hak = "B-";
+				}else {
+					hak = "B0";
+				}
+				//System.out.println("B학점 입니다.");
+			}else if(grade >= 70) {
+				if(grade>=78) {
+					hak = "C+";
+				}else if(grade<=74) {
+					hak = "C-";
+				}else {
+					hak = "C0";
+				}
+				//System.out.println("C학점 입니다.");
+			}else if (grade >= 60){
+				if(grade>=68) {
+					hak = "D+";
+				}else if(grade<=64) {
+					hak = "D-";
+				}else {
+					hak = "D0";
+				}
+				//System.out.println("D학점 입니다.");
+			}else {
+				hak = "F";
+				//System.out.println("F학점 입니다.");
+			}
+			System.out.println(hak + " 학점 입니다.");
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		
+		
+	}
+
+}
