@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class BooleanExample {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		boolean flag = true;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("정수를 입력");
+		
+		while(flag) {
+			int num = sc.nextInt();
+			if(num == 1) {
+				System.out.println("1번을 입력");
+			}else if(num == 2) {
+				System.out.println("2번을 입력");
+			}else {
+				System.out.println("잘못 입력하였습니다");
+				flag = false;
+			}
+		}
+		System.out.println("프로그램 종료");
+
+	}
+
+}
