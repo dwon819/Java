@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class String_TEST {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		
+		Scanner sc = new Scanner(System.in);
+		
+		String input;
+		do {
+			input = sc.nextLine();
+			System.out.println(input);
+		}while(!input.equals("q"));
+		System.out.println("프로그램종료");
+
+	}
+
+}
