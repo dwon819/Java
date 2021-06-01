@@ -1,0 +1,76 @@
+
+import java.util.Scanner;
+
+public class Random {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);//입력받기위한 선언 import java.util.Scanner;
+		String user= " ",comp=" ";
+		int com;
+		System.out.println("1.가위  2.바위  3.보");
+		int RCP= sc.nextInt();
+		com = (int)(Math.random() * 3) + 1;//1~3까지의 난수
+		if(RCP == 1) {
+			user="가위";
+		}else if(RCP==2) {
+			user="바위";
+		}else {
+			user="보";
+		}
+		
+		if(com == 1) {
+			comp="가위";
+		}else if(com==2) {
+			comp="바위";
+		}else {
+			comp="보";
+		}
+		System.out.println("나는 "+user+" 입니다");
+		System.out.println("컴퓨터는 "+comp+" 입니다");
+		//case if 문
+		switch(RCP) {
+		case 1:
+			if(com==1) {
+				System.out.println("비겼습니다.");
+			}else if(com==2) {
+				System.out.println("내가 졌습니다");
+			}else if(com==3) {
+				System.out.println("내가 이겼습니다.");
+			}
+			break;
+		case 2:
+			if(com==1) {
+				System.out.println("내가 이겼습니다.");
+			}else if(com==2) {
+				System.out.println("비겼습니다.");
+			}else if(com==3) {
+				System.out.println("내가 졌습니다");
+			}
+			break;
+		case 3:
+			if(com==1) {
+				System.out.println("내가 졌습니다");
+			}else if(com==2) {
+				System.out.println("내가 이겼습니다.");
+			}else if(com==3) {
+				System.out.println("비겼습니다.");
+			}
+			break;
+			default:
+				System.out.println("잘 못 입력하였습니다.");
+				break;
+		}
+		//if문
+		if((com+3-RCP)%3==0) {
+			System.out.println("비겼습니다.");
+		}else if((com+3-RCP)%3==1) {
+			System.out.println("내가 졌습니다.");
+		}else{
+			System.out.println("내가 이겼습니다.");
+		}
+	
+		
+	}
+}
+
+
