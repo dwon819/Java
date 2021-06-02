@@ -22,10 +22,9 @@ public class ArrayEx {
 			int selectNo = sc.nextInt();
 			if(selectNo == 1) {
 				System.out.print("학생수> ");
-				int studentNo = sc.nextInt();
-				for(int i = 0; i<studentNo; i++) {
-					scores = new int[studentNo];
-				}
+				int studentNo = sc.nextInt();				
+				scores = new int[studentNo];
+				
 			}else if(selectNo==2) {
 				for(int i = 0;i < scores.length; i++) {
 					System.out.print("scores["+i+"]: ");
