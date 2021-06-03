@@ -1,0 +1,67 @@
+//메인 파일
+import java.util.Scanner;
+
+public class OrderTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Order o = new Order();
+//		o.orderNo= 2021060300001L;
+//		o.id = "abc123";
+//		o.date = "2021/3/12";
+//		o.name = "홍길동";
+//		o.itemNo="PD03214-12";
+//		o.adress="서울시 영등포구";
+		
+//		Order o = new Order(2021060300001L,"abc123","2021/3/12","홍길동","PD03214-12","서울시 영등포구");
+		
+		Scanner s1 = new Scanner(System.in);
+		System.out.println("주문번호를 입력해주세요: ");
+		o.orderNo= s1.nextLong();
+		System.out.println("아이디를 입력해주세요: ");
+		s1.nextLine();
+		o.id = s1.nextLine();
+		System.out.println("날짜를 입력해주세요: ");
+		o.date = s1.nextLine();
+		System.out.println("주문상품번호를 입력해주세요: ");
+		o.itemNo=s1.nextLine();
+		System.out.println("이름을 입력해주세요: ");
+		o.name = s1.nextLine();
+		System.out.println("주소를 입력해주세요: ");
+		o.adress=s1.nextLine();
+		o.orderPrint();
+	}
+
+}
+
+
+
+//클래스파일
+public class Order {
+	long orderNo;
+	String id;
+	String date;
+	String name;
+	String itemNo;
+	String adress;
+	Order(){
+		
+	}
+	Order(long orderNo,String id, String date,String itemNo,String name, String adress){
+		this.orderNo = orderNo;
+		this.id = id;
+		this.date = date;
+		this.itemNo = itemNo;
+		this.name = name;
+		this.adress = adress;		
+	}
+	void orderPrint(){
+		System.out.println("주문번호: " + this.orderNo);
+		System.out.println("주문자 아이디: "+this.id);
+		System.out.println("주문날짜: "+this.date);
+		System.out.println("주문상품번호: "+this.itemNo);
+		System.out.println("주문자 이름: "+this.name);
+		System.out.println("배송주소: "+this.adress);
+	}
+}
+
