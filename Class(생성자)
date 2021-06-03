@@ -1,4 +1,90 @@
 
+public class Car {
+	//변수 (속성)
+	String company;
+	String model;
+	String color;
+	int maxSpeed;
+	int speed;
+	
+	//생성자
+	Car(){
+		
+	}
+	Car(String model){
+		this(model,"은색",250);
+	}
+	Car(String model,String color){
+		this(model,color,250);
+	}
+	Car(String model,String color,int maxSpeed){
+		this.model = model;
+		this.color = color;
+		this.maxSpeed = maxSpeed;
+	}
+	
+	//메소드(기능)
+	void keyTurnOn() {
+		System.out.println("시동을 걸었습니다");
+	}
+	
+	void keyTurnOff() {
+		System.out.println("시동을 껐습니다");
+	}
+	
+	void Accel() {
+		for(int i = 0; i< 200; i++) {
+			speed = i;
+			System.out.println(speed);
+		}
+	}
+}
+
+
+
+public class CarTest {
+
+	public static void main(String[] args) {
+//		Car car1 = new Car();
+//		System.out.println("car1.company"+car1.company);
+//		System.out.println();
+//		
+//		Car car2 = new Car("자가용");
+//		System.out.println("car2.company"+car2.company);
+//		System.out.println("car2.model"+car2.model);
+//		System.out.println();
+//		
+//		Car car3 = new Car("자가용","빨강");
+//		System.out.println("car3.company"+car3.company);
+//		System.out.println("car3.model"+car3.model);
+//		System.out.println("car3.color"+car3.color);
+//		System.out.println();
+//		
+//		Car car4 = new Car("택시","검정",200);
+//		System.out.println("car4.company"+car4.company);
+//		System.out.println("car4.model"+car4.model);
+//		System.out.println("car4.color"+car4.color);
+//		System.out.println("car4.maxSpeed"+car4.maxSpeed);
+//		System.out.println();
+		
+		Car c = new Car();
+		System.out.println(c.company);
+		Car c1 = new Car("기아자동차","k8");
+		System.out.println(c1.company);
+		Car c2 = new Car("벤츠코리아","E250");
+		c2.keyTurnOn();
+		c2.Accel();
+		c2.keyTurnOff();
+		
+
+		
+		
+		
+	}
+
+}
+
+
 public class Calc {
 //	리턴타입 메소드명(매개변수1,.... ){
 //		return
@@ -31,37 +117,47 @@ public class Calc {
 //	public double add4(double x, double y) {
 //		return x + y ;
 //	}
+	//가변형 메소드
+	public int sum(int ... value) {
+		int sum = 0;
+		for(int num : value) {
+			sum += num;
+		}
+		return sum;
+	}
+	
+	
 
 }
 
 
-public class Car {
-	//변수 (속성)
-	String company;
-	String model;
-	String color;
-	int maxSpeed;
-	int speed;
-	
-	//생성자
-	Car(){
-		
+public class CalcOverload {
+	//오버로딩
+	//1.메소드의 이름이 같아야 한다.
+	//2.단 매개변수의 타입 또는 갯수가 달라야 한다.
+	void add() {
+		System.out.println(5+7);
 	}
-	Car(String model){
-		this(model,"은색",250);
+	//int x 매개변수를 넣어 갯수가 다르다
+	void add(int x) {
+		System.out.println(x);
 	}
-	Car(String model,String color){
-		this(model,color,250);
+	//double x 매개변수를 넣어 타입이 다르게 했다
+	void add(double x) {
+		System.out.println(x);
 	}
-	Car(String model,String color,int maxSpeed){
-		this.model = model;
-		this.color = color;
-		this.maxSpeed = maxSpeed;
+	//int x, int y 매개변수들을 넣어 갯수가 다르게 했다
+	void add(int x, int y) {
+		System.out.println(x);
 	}
-	
-	
-	
-	//메소드(기능)
+	//long y 를 넣어 타입이 다르게 했다
+	void add(int x,long y) {
+		System.out.println(x);
+	}
+	void add(long x, int y) {
+		System.out.println(x);
+	}
 
 }
+
 
