@@ -1,0 +1,31 @@
+
+public class DataExampleTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		DataExample d = new DataExample();
+		d.x = 10;
+		d.y = 20;
+		
+		System.out.println(d.x+" "+d.y);
+		swap(d);
+		System.out.println("반전");
+		System.out.println(d.x+" "+d.y);
+	}
+	public static void swap(DataExample z) {
+		int tmp=0;
+		tmp = z.x;
+		z.x = z.y;
+		z.y = tmp;
+		
+	}
+
+}
+
+
+
+
+public class DataExample {
+	int x;
+	int y;
+}
