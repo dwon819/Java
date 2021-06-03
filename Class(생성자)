@@ -1,0 +1,67 @@
+
+public class Calc {
+//	리턴타입 메소드명(매개변수1,.... ){
+//		return
+//	}
+	
+	//리턴타입(void,기본형,참조형)
+	public void add() {
+		System.out.println(3+5);
+	}
+	
+	//빼기기능
+	public int sub(int x, int y) {
+		return x - y;
+	}
+	//곱하기기능
+	public int mul(int x, int y) {
+		return x * y;
+	}
+	//나누기(실수형으로)
+	public double div(double x, double y) {
+		return x / y;
+	}
+//	public void add2(int x, int y) {
+//		System.out.println(x+y);
+//	}
+//	public int add3(int x,int y) {
+//		int sum = x + y;
+//		return sum;
+//	}
+//	public double add4(double x, double y) {
+//		return x + y ;
+//	}
+
+}
+
+
+public class Car {
+	//변수 (속성)
+	String company;
+	String model;
+	String color;
+	int maxSpeed;
+	int speed;
+	
+	//생성자
+	Car(){
+		
+	}
+	Car(String model){
+		this(model,"은색",250);
+	}
+	Car(String model,String color){
+		this(model,color,250);
+	}
+	Car(String model,String color,int maxSpeed){
+		this.model = model;
+		this.color = color;
+		this.maxSpeed = maxSpeed;
+	}
+	
+	
+	
+	//메소드(기능)
+
+}
+
