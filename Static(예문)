@@ -1,0 +1,49 @@
+
+public class StaticExTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		double result = StaticEx.pi * 10 * 10;
+		System.out.println(result);
+		int sum = StaticEx.plus(10, 20);
+		System.out.println(sum);
+		
+		StaticEx s1 = new StaticEx();
+		StaticEx s2 = new StaticEx();
+		s1.iv = 100;
+		System.out.println(s1.iv);
+		System.out.println(s2.iv);
+		s1.pi=20;
+		System.out.println(s1.pi);
+		System.out.println(s2.pi);
+	}
+
+}
+
+public class StaticEx {
+//	변수 - 	인스턴스 변수 (int iv)
+//				-생성자에 의한 초기화 가능
+//				-생성할때 마다 할당 되어진다.
+//		-	클래스(static)변수 (static int cv)
+//				-생성자 초기화 안됨
+//				-한번	만 할당 되어짐(모두 객체가 공유한다.)
+//				-객체의 생성 없이 사용 가능(클래스이름.변수명)
+	
+//	생성자
+	
+	
+//	메소드 - 	인스턴스 메소드
+//				-void add(){}
+//		 -	클래스(static) 메소드
+//				-static void add() {}
+//				-객체의 생성 없이 사용 가능(클래스이름.메소드명())
+	int iv;
+	static double pi=3.14;
+	static int plus(int a, int b) {
+		return a + b;
+	}
+	
+	static int sub(int a, int b) {
+		return a - b;
+	}
+}
