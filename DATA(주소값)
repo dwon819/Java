@@ -1,0 +1,24 @@
+
+public class DataTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Data d = new Data();
+		d.x = 10;
+		System.out.println(d.x);
+		change(d);
+		System.out.println(d.x);
+	}
+	public static void change(Data z) {
+		z.x = 100;
+		System.out.println(z.x);
+	}
+
+}
+
+
+
+public class Data {
+	int x;
+	
+}
