@@ -3,22 +3,30 @@ public class StaticExTest {
 
 	public static void main(String[] args) {
 		// TODO 자동 생성된 메소드 스텁
-		double result = StaticEx.pi * 10 * 10;
-		System.out.println(result);
-		int sum = StaticEx.plus(10, 20);
-		System.out.println(sum);
+		StaticEx s = new StaticEx();
+		StaticEx s2 = new StaticEx(0.98);
 		
-		StaticEx s1 = new StaticEx();
-		StaticEx s2 = new StaticEx();
-		s1.iv = 100;
-		System.out.println(s1.iv);
-		System.out.println(s2.iv);
-		s1.pi=20;
-		System.out.println(s1.pi);
-		System.out.println(s2.pi);
+//		StaticEx s1 = new StaticEx; //생성자를 정의 하는 순간 기본 생성자를 해주지않기 때문에 생성자를 정의 해야한다.
+
+//		double result = StaticEx.pi * 10 * 10;
+//		System.out.println(result);
+//		int sum = StaticEx.plus(10, 20);
+//		System.out.println(sum);
+//		
+//		StaticEx s1 = new StaticEx();
+//		StaticEx s2 = new StaticEx();
+//		s1.iv = 100;
+//		System.out.println(s1.iv);
+//		System.out.println(s2.iv);
+//		s1.pi=20;
+//		System.out.println(s1.pi);
+//		System.out.println(s2.pi);
+//		System.out.println(s1.PI);
+//		s1.PI =123.124;//PI는 final 이기 때문에 수정 불가
 	}
 
 }
+
 
 public class StaticEx {
 //	변수 - 	인스턴스 변수 (int iv)
@@ -28,7 +36,10 @@ public class StaticEx {
 //				-생성자 초기화 안됨
 //				-한번	만 할당 되어짐(모두 객체가 공유한다.)
 //				-객체의 생성 없이 사용 가능(클래스이름.변수명)
-	
+
+//	상수	-	변경이 불가한 변수(final double PI)<<<변수 이름을 변수랑 다르게 하기위해 대문자!!
+//		  -	반드시 초기화를 해서 선언한다.
+//		  -	생성자를 통한 초기화가 가능	 
 //	생성자
 	
 	
@@ -38,7 +49,18 @@ public class StaticEx {
 //				-static void add() {}
 //				-객체의 생성 없이 사용 가능(클래스이름.메소드명())
 	int iv;
+	final double GRAVITY;
+	final double PI=3.14;
 	static double pi=3.14;
+	
+	StaticEx(){
+		this(123.4); //기본생성자를 만듬
+	}
+	
+	StaticEx(double GRAVITY){
+		this.GRAVITY = GRAVITY;
+		//예외적으로 final 이지만 생성자를 이용해서 초기화해서 사용하면 정의 하지 않아도 됨. 딱 1번
+	}
 	static int plus(int a, int b) {
 		return a + b;
 	}
