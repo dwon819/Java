@@ -1,0 +1,99 @@
+//Car.class
+package com.mycompany;
+
+import com.hankook.SnowTire; //임포트 관련 단축키 ctrl+shift+o(영어)
+
+import com.hankook.Tire;//사용할 패키지의 클래스 임포트 그이후 아래에서 사용 할 수 있음
+//import com.hankook.*; 패키지 안에 모든 클래스 *<<<표시
+
+//import 할때 대상 클래스의 앞에 public 이 없다면 사용 할 수 없다. private를 사용하면 가져와서 사용 할 수 없다
+
+//class 안에서 위 도구창의 소스 -> 생성자 생성을 사용하면 생성자를 만들수 있다.
+//private 는 같은 패키지여도 쓸수 없게 막음
+//protected,default는 같은 패키지 안에서만 사용가능
+
+public class Car {
+	Tire t = new Tire();
+	SnowTire st = new SnowTire();
+	com.kumho.Tire t2 = new com.kumho.Tire(); //다른 패키지의 같은 클래스 이름을 가지면 이런식으로 임포트 할 수 있다 하지만 추천 X
+}
+
+//A.class
+package access.package1;
+
+public class A {
+//	A a1 = new A(true);
+//	A a2 = new A(1);
+//	A a3 = new A("a");
+	public int field1;
+	int field2;
+	private int field3;
+	
+//	public A(boolean b){
+//		
+//	}
+//	A(int b){
+//		
+//	}
+//	private A(String s){
+//	
+//	}
+	public A(){
+		field1 = 1;
+		field2 = 1;
+		field3 = 1;
+	
+		method1();
+		method2();
+		method3();
+	}
+	
+	public void method1() {}
+	void method2() {}
+	private void method3() {}
+	
+
+}
+
+
+//b.class
+package access.package1;
+
+public class B {
+//	A a1 = new A(true);
+//	A a2 = new A(1);
+//	A a3 = new A("a"); //private 이기때문에 같은 패키지여도 에러
+
+	public B() {
+		A a = new A();
+		a.field1 = 1;
+		a.field2 = 1;
+//		a.field3 = 1; //private 접근 x
+	
+		a.method1();
+		a.method2();
+//		a.method3(); //private 접근 x
+	}
+}
+
+
+//c.class
+package access.pakage2;
+
+import access.package1.A;
+
+public class C {
+//	A a1 = new A(true);
+//	A a2 = new A(1);//패키지가 다르기 때문에 default 접근불가
+//	A a3 = new A("a");//패키지가 다르기 때문에 private 접근불가
+//	public C() {
+//		A a = new A();
+//		a.field1 = 1;
+//		a.field2 = 1;	//default라서 접근 x(패키지가 다르기때문)
+//		a.field3 = 1; 	//private 접근 x
+//	
+//		a.method1();
+//		a.method2();	//default라서 접근 x(패키지가 다르기때문)
+//		a.method3(); 	//private 접근 x
+//	}
+}
