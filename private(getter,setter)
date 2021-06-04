@@ -1,0 +1,53 @@
+//Car.class-------------------------------------------------------------------------------------------------------------------------------
+
+package access.package3;
+
+public class Car {
+	private int speed;
+	private boolean stop;
+	
+	public int getSpeed() {//getter,setter메소는 반드시 public 그리고 return 을 사용하고 멤버변수와 같은 return 타입을 갖는다.
+		return speed;
+	}
+	public void setSpeed(int speed) {//외부에서 데이터를 넣어주는 역할이라 매개변수를 넣어준다.
+		if(speed < 0) {
+			this.speed = 0;
+			return;
+		}else {
+			this.speed = speed;
+		}
+	}
+	public boolean isStop() {
+		return stop;
+	}
+	public void setStop(boolean stop) {
+		this.stop = stop;
+		this.speed = 0;
+	}
+
+}
+
+//CarExample.class-------------------------------------------------------------------------------------------------------------------------------
+
+
+package access.package3;
+
+public class CarExample {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Car myCar = new Car();
+		myCar.setSpeed(-50);
+		System.out.println("현재 속도:"+myCar.getSpeed());
+		
+		myCar.setSpeed(60);
+		
+		if(!myCar.isStop()) {
+			myCar.setStop(true);
+		}//정지시키는 부문 !myCar.isStop()이 false라면 멈춘다 
+		System.out.println("현재속도: "+myCar.getSpeed());
+
+
+	}
+
+}
