@@ -17,7 +17,7 @@ public class Car {
 			this.speed = speed;
 		}
 	}
-	public boolean isStop() {
+	public boolean isStop() {//boolean 같은경우 참거짓 두개 이기때문에 is라고 쓴다 get X
 		return stop;
 	}
 	public void setStop(boolean stop) {
