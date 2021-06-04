@@ -27,8 +27,9 @@ public class A {
 //	A a3 = new A("a");
 	public int field1;
 	int field2;
-	private int field3;
-	
+	private int field3;//>>요소를 숨기는 캡슐화를 하는 private 인간의 장기를 감싸는 몸과 같다. 밖에서는 안을 볼 수 없다.
+	//객체 지향적인 프로그래밍에서는 상속,다형성,캡슐화 이렇게 3가지를 골고루 사용하는것이다.
+	//private를 걸어도 간접적으로 우회해서 사용할수 있다 getter, setter
 //	public A(boolean b){
 //		
 //	}
