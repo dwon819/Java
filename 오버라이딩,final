@@ -1,0 +1,44 @@
+//Calculator.class -------------------------------------------------------------------------------------------------------------------------------------
+package override;
+//public final class  Calculator //final을 쓰게 되면 상속을 할 수 없다
+public class Calculator {
+	double areaCircle(double r) {
+		System.out.println("Calculator 객체의 areaCircle() 실행");
+		return 3.14159 * r * r;
+	}//final 을 쓰면 오버 라이딩을 할 수 없다.
+}
+//Computer.class -------------------------------------------------------------------------------------------------------------------------------------
+package override;
+
+public class Computer extends Calculator {
+	@Override
+	double areaCircle(double r) {
+		System.out.println("Computer 객체의 areaCircle() 실행");
+		return Math.PI * r * r;
+	}
+	//여러개일때 메뉴-소스-override(메소드 대체)선택
+//	@Override
+//	double areaCircle(double r) {
+//		// TODO 자동 생성된 메소드 스텁
+//		return super.areaCircle(r); // super라는 객체를 사용해서 자식클래스에서 부모에 있는 메소드 호출!
+//	}
+}
+
+//ComputerExample.class -------------------------------------------------------------------------------------------------------------------------------------
+package override;
+
+public class ComputerExample {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		int r = 10;
+		
+		Calculator calculator = new Calculator();
+		System.out.println("원면적 "+calculator.areaCircle(r));
+		System.out.println();
+		
+		Computer computer = new Computer();
+		System.out.println("원면적 "+computer.areaCircle(r));
+	}
+
+}
