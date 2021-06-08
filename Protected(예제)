@@ -38,3 +38,9 @@ public class ProtectedTest {
 	}
 
 }
+//---상속과 관련된 특징---
+//생성자
+//메소드
+//super
+//final
+//protected
