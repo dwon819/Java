@@ -1,0 +1,98 @@
+//TakeTest.class ------------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.cooperation;
+
+public class TakeTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Student james = new Student("james",1,5000);
+		Student tomas = new Student("tomas",2,10000);
+
+		Bus bus100 = new Bus(100);
+		Subway subway2 = new Subway("2호선");
+		
+		james.takeBus(bus100);
+		bus100.showInfo();
+		tomas.takeSubway(subway2);
+		subway2.showInfo();
+		
+		james.showInfo();
+		
+		
+
+	}
+
+}
+
+//Student.class ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package com.cooperation;
+
+public class Student {
+	String studentName;
+	int grade;
+	int money;
+	public Student(String studentName, int grade, int money) {
+		this.studentName = studentName;
+		this.grade = grade;
+		this.money = money;
+	}
+	void takeBus(Bus bus) {
+		bus.take(1500);
+		this.money -=1500;
+	}
+	
+	void takeSubway(Subway subway) {
+		subway.take(3000);
+		this.money -=3000;
+	}
+	
+	void showInfo() {
+		System.out.println(studentName + "남은 금액은"+money);
+	}
+	
+}
+
+//Subway.class ------------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.cooperation;
+
+public class Subway {
+	String lineNumber;
+	int passengerCount;
+	int money;
+	public Subway(String lineNumber) {
+		this.lineNumber = lineNumber;
+	}
+	void take(int money) {
+		passengerCount++;
+		this.money += money;
+	}
+	void showInfo() {
+		System.out.println("지하철" + lineNumber + "번의 승객 수 " + passengerCount);
+		System.out.println("수익은 " + money + "입니다. ");
+	}
+
+}
+
+//Bus.class ------------------------------------------------------------------------------------------------------------------------------------------------------------
+package com.cooperation;
+
+public class Bus {
+	int busNumber;
+	int passengerCount;
+	int money;
+	
+	public Bus(int busNumber) {
+		this.busNumber = busNumber;
+	}
+	void take(int money) {
+		passengerCount++;
+		this.money += money;
+	}
+	void showInfo() {
+		System.out.println("버스" + busNumber + "번의 승객 수 " + passengerCount);
+		System.out.println("수익은 " + money + "입니다. ");
+	}
+
+}
+
