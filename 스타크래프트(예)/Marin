@@ -1,0 +1,18 @@
+package com.StarCraft1;
+
+
+
+public class Marin extends GroundUnit implements Repairable {
+
+	@Override
+	public String toString() {
+	
+		return "마린";
+	}
+	public Marin() {
+		super(40);
+		// TODO 자동 생성된 생성자 스텁
+		hitPoint=MAX_HP;
+	}
+
+}
