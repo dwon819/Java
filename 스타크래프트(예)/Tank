@@ -1,0 +1,19 @@
+package com.StarCraft1;
+
+
+public class Tank extends GroundUnit implements Repairable{
+	
+	@Override
+	public String toString() {
+	
+		return "탱크";
+	}
+
+	public Tank() {
+		super(150);
+		// TODO 자동 생성된 생성자 스텁
+		hitPoint=MAX_HP;
+		
+	}
+
+}
