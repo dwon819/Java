@@ -1,0 +1,19 @@
+package com.StarCraft1;
+
+public class StarCraftExample {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Tank t = new Tank();
+		DropShip d = new DropShip();
+		Marin m = new Marin();
+		SCV s = new SCV();
+		t.hitPoint = 130;
+		s.repair(t);
+		d.hitPoint = 100;
+		s.repair(d);
+		
+
+	}
+
+}
