@@ -1,0 +1,35 @@
+package com.StarCraft1;
+
+
+
+public class SCV extends GroundUnit implements Repairable{
+
+	@Override
+	public String toString() {
+	
+		return "SCV";
+	}
+	public SCV() {
+		super(60);
+		// TODO 자동 생성된 생성자 스텁
+		hitPoint=MAX_HP;
+	}
+	
+	void repair(Repairable r) {
+		if(r instanceof Unit) {
+			Unit u = (Unit)r;
+			System.out.println(u.toString()+"수리합니다");
+			while(true) {
+				if(u.hitPoint==u.MAX_HP) {
+					break;
+				}
+				u.hitPoint += 1;
+				System.out.println("HP: "+u.hitPoint+"/"+u.MAX_HP);
+			}
+			System.out.println(u+"수리완료");
+			
+		}
+		
+	}
+
+}
