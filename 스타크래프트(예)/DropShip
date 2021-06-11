@@ -1,0 +1,17 @@
+package com.StarCraft1;
+
+
+
+public class DropShip extends AirUnit implements Repairable {
+
+	@Override
+	public String toString() {
+	
+		return "드랍쉽";
+	}
+	public DropShip() {
+		super(125);
+		hitPoint=MAX_HP;
+	}
+
+}
