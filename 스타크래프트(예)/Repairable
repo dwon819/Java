@@ -1,0 +1,5 @@
+package com.StarCraft1;
+
+public interface Repairable{
+	
+}
