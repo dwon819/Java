@@ -1,0 +1,11 @@
+package com.StarCraft1;
+
+public class AirUnit extends Unit {
+
+	public AirUnit(int max_HP) {
+		super(max_HP);
+		// TODO 자동 생성된 생성자 스텁
+		
+	}
+
+}
