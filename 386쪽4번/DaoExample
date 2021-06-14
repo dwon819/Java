@@ -1,0 +1,19 @@
+package com.example386_04;
+
+
+public class DaoExample {
+	public static void dbWork(DataAccessObject dao) {
+		dao.select();
+		dao.insert();
+		dao.update();
+		dao.delect();
+	}
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		dbWork(new OracleDao());
+		dbWork(new MySql());
+
+	}
+
+}
