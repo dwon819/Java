@@ -1,0 +1,22 @@
+package com.BUTTON;
+
+public class ListenerTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		
+		Button b1 = new Button();
+		CallListener c1 = new CallListener();
+		MessageListener m1 = new MessageListener();
+		
+		c1.onClick();
+		m1.onClick();
+		
+		b1.setOnClickListener(c1);
+		b1.touch();
+		
+		b1.setOnClickListener(m1);
+		b1.touch();
+	}
+
+}
