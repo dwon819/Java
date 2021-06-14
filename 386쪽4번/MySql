@@ -1,0 +1,35 @@
+package com.example386_04;
+
+public class MySql implements DataAccessObject {
+	DBname DB = new DBname();
+	String name = DB.name[1];
+	@Override
+	public void select() {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print(name);
+		DB.select();
+
+	}
+
+	@Override
+	public void insert() {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print(name);
+		DB.insert();
+	}
+
+	@Override
+	public void update() {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print(name);
+		DB.update();
+	}
+
+	@Override
+	public void delect() {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print(name);
+		DB.delect();
+	}
+
+}
