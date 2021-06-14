@@ -1,0 +1,47 @@
+package com.inner;
+
+public class A {
+	A(){
+		System.out.println("A객체 생성");
+	}
+	
+	class B {
+		B(){
+			System.out.println("B객체 생성");
+		}
+		
+		int field;
+		void method1() {
+			System.out.println("B객체 메소드 1 실행");
+		}
+	}
+	
+	static class C{
+		C(){
+			System.out.println("C객체 생성");
+		}
+		int field;
+		static int field2;
+		void method1() {
+			System.out.println("C객체 메소드 1 실행");
+		}
+		static void method2() {
+			System.out.println("C객체 메소드 2 실행");
+		}
+		
+	}
+	void method() {
+		class D{
+			D(){
+				System.out.println("D객체 생성");
+			}
+			int field;
+			void method() {
+				System.out.println("D객체 메소드 실행");
+			}
+		}
+		D d = new D();
+		d.field = 3;
+		d.method();
+	}
+}
