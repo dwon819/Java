@@ -3,7 +3,7 @@ package com.inface;
 public class LiftImp implements Liftable {
 
 	@Override
-	public void lift() {
+	public void liftOff() {
 		// TODO 자동 생성된 메소드 스텁
 		System.out.println("이륙한다");
 	}
