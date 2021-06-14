@@ -1,0 +1,26 @@
+package com.inface;
+
+public class BuildingTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Acadame ac = new Acadame();
+		Barrack ba = new Barrack();
+		Bunker bk = new Bunker();
+		Factory fc = new Factory();
+		
+		ba.liftOff();
+		ba.move(10, 15);
+		ba.stop();
+		ba.land();
+		
+		System.out.println("====================");
+		
+		fc.liftOff();
+		fc.move(8, 15);
+		fc.stop();
+		fc.land();
+
+	}
+
+}
