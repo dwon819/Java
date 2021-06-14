@@ -1,0 +1,9 @@
+package com.inface;
+
+public class Building {
+
+	public Building() {
+		// TODO 자동 생성된 생성자 스텁
+	}
+
+}
