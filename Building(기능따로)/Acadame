@@ -1,0 +1,5 @@
+package com.inface;
+
+public class Acadame extends Building {
+
+}
