@@ -1,0 +1,28 @@
+package interface1;
+
+public class AnonymousExample {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Anonymous anony = new Anonymous();
+		anony.field.turnOn();
+		anony.method1();
+		anony.method2(new RemoteControl() {
+			
+			@Override
+			public void turnOn() {
+				// TODO 자동 생성된 메소드 스텁
+				System.out.println("SmartTV 를 켭니다");
+			}
+			
+			@Override
+			public void turnOff() {
+				// TODO 자동 생성된 메소드 스텁
+				System.out.println("SmartTV 를 끕니다");
+				
+			}
+		});
+
+	}
+
+}
