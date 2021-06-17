@@ -1,0 +1,25 @@
+package com.exception;
+
+public class Number {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		String data1 = "100";
+		String data2 = "a100";
+		int value2;
+		
+		int value1 = Integer.parseInt(data1);
+		try {
+			value2 = Integer.parseInt(data2);
+		}catch(NumberFormatException e){
+			System.out.println("숫자형태의 구성이 아닙니다.");
+			value2 = 200;
+		}
+			int result = value1 + value2;
+			System.out.println(value1+"+"+value2+"="+result);
+		
+
+		}
+
+	}
+
