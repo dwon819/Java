@@ -6,33 +6,54 @@ import java.util.Scanner;
 
 public class ThrowExceptionExample {
 	public static void main(String[] args){
+		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("생성할 파일 이름을 입력하세요: ");
 		String fileName = sc.nextLine();
-		File f = createFile(fileName+".txt"); 	
+		try {
+			File f = createFile(fileName);
+		}catch(Exception e){
+			System.out.println("파일생성이 안됬습니다.");
+			fileName = "제목없음.txt";
+			try {
+				File f = createFile(fileName);
+			} catch (Exception e1) {
+				// TODO 자동 생성된 catch 블록
+				e1.printStackTrace();
+			}
+		}
 		System.out.println("파일생성완료>>");
 	}
-	public static File createFile(String fileName) {
-		try {
-			if(fileName == null || fileName.equals("")) {
+	public static File createFile(String fileName) throws Exception{
+		if(fileName == null || fileName.equals("")) {
 			throw new Exception("이름이 잘못 되었습니다");
-				}
-			}catch (Exception e) {
-				// TODO: handle exception
-				fileName = "제목없음.txt";
-			}finally {
-				File f = new File(fileName);
-				create(f);
-				return f;
-			}
-	}
-	
-	static void create(File f) {
-		try {
-			f.createNewFile();
-		} catch (IOException e) {
-			// TODO 자동 생성된 catch 블록
-			System.out.println("파일 생성에 문제가 발생했습니다.");
 		}
+		String text = ".txt";
+		File f = new File(fileName+text);
+		f.createNewFile();
+		return f;
 	}
+//	public static File createFile(String fileName) {
+//		try {
+//			if(fileName == null || fileName.equals("")) {
+//			throw new Exception("이름이 잘못 되었습니다");
+//				}
+//			}catch (Exception e) {
+//				// TODO: handle exception
+//				fileName = "제목없음.txt";
+//			}finally {
+//				File f = new File(fileName);
+//				create(f);
+//				return f;
+//			}
+//	}
+	
+//	static void create(File f) {
+//		try {
+//			f.createNewFile();
+//		} catch (IOException e) {
+//			// TODO 자동 생성된 catch 블록
+//			System.out.println("파일 생성에 문제가 발생했습니다.");
+//		}
+//	}
 }
