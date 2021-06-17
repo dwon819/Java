@@ -1,0 +1,28 @@
+package com.exception;
+
+public class Array {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+//		if(args.length ==2){
+//			String data1 = args[0];
+//			String data2 = args[1];
+//		 	System.out.println("args[0]: "+data1);
+//			System.out.println("args[1]: "+data2);
+//			}else{
+//			System.out.println("[실행방법]");
+//			System.out.println("java ArrayIndexOutOfBoundsExceptonExample");
+//			System.out.println("값1 값2");
+//			}
+		try {
+			String data1 = args[0];
+			String data2 = args[1];
+			System.out.println("args[0]: "+data1);
+			System.out.println("args[1]: "+data2);
+		}catch (ArrayIndexOutOfBoundsException e) {
+			// TODO: handle exception
+			
+		}
+
+	}
+}
