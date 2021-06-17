@@ -6,17 +6,28 @@ public class Number {
 		// TODO 자동 생성된 메소드 스텁
 		String data1 = "100";
 		String data2 = "a100";
-		int value2;
+		String str = null;
+		int value2 = 0;
 		
 		int value1 = Integer.parseInt(data1);
 		try {
+			System.out.println(str.toString());
+			System.out.println(value1/0);
 			value2 = Integer.parseInt(data2);
 		}catch(NumberFormatException e){
 			System.out.println("숫자형태의 구성이 아닙니다.");
 			value2 = 200;
+		}catch(ArithmeticException e) {
+			System.out.println("정수를 0으로 나누시면 안됩니다.");
+		}catch (Exception e) {
+			// TODO: handle exception
+			System.out.println("예외가 발생했습니다");
+		}finally {
+			System.out.println("예외처리에 대한 실행을 완료합니다");
 		}
 			int result = value1 + value2;
 			System.out.println(value1+"+"+value2+"="+result);
+			System.out.println(value1);
 		
 
 		}
