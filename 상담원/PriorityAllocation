@@ -1,0 +1,28 @@
+package Example;
+
+public class PriorityAllocation implements Scheduler {
+	
+	public PriorityAllocation() {//우선순위
+		// TODO 자동 생성된 생성자 스텁
+	}
+
+	@Override
+	public void getNextCall(CustomCall c) {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print("전문상담원에게 연결해드리겠습니다. ");
+		System.out.println(c.name+"님");
+		
+	}
+
+	@Override
+	public void sendCallToAgent(CustomCall c) {
+		// TODO 자동 생성된 메소드 스텁
+		System.out.print(c.name+"님 ");
+		System.out.println("전문상담원에게 바로 연결이 되었습니다.");
+		
+	}
+	
+
+	
+
+}
