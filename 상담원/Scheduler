@@ -1,0 +1,7 @@
+package Example;
+
+public interface Scheduler {
+	 void getNextCall(CustomCall c);
+	
+	 void sendCallToAgent(CustomCall c);
+}
