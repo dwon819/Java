@@ -1,0 +1,72 @@
+package Example;
+
+import java.util.Scanner;
+
+public class SchedulerTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		String cName;
+		String[] cALL = null;
+		Scheduler least = new LeastJob();
+		Scheduler round = new RoundRobin();
+		Scheduler prior = new PriorityAllocation();
+		CustomCall kim = new CustomCall("kim");
+		int cNum = 0;
+		int Exit = 0;
+		int count = 100;
+		Scanner s1 = new Scanner(System.in);
+
+		while(true) {
+			System.out.println("오늘의 전화 받을 수 있는 총 인원은 100명 입니다.");
+			System.out.println("이름을 입력해주세요");
+			String CuName = s1.next();
+			System.out.println("1.순서대로\n2.최소작업\n3.전문통화\n4.종료>>>>");
+			cNum = s1.nextInt();
+			switch(cNum) {
+			case 1:
+				round.getNextCall(new CustomCall(CuName));
+				round.sendCallToAgent(new CustomCall(CuName));
+				System.out.println("1.통화를 종료합니다");
+				Exit = s1.nextInt();
+				
+				if(Exit == 1) {
+					count--;
+					System.out.println("가능: "+count);
+					continue;
+				}
+				
+			case 2:
+				least.getNextCall(new CustomCall(CuName));
+				least.sendCallToAgent(new CustomCall(CuName));
+				System.out.println("1.통화를 종료합니다");
+				Exit = s1.nextInt();
+				
+				if(Exit == 1) {
+					count--;
+					System.out.println("가능: "+count);
+					continue;
+				}
+			case 3:
+				prior.getNextCall(new CustomCall(CuName));
+				prior.sendCallToAgent(new CustomCall(CuName));
+				System.out.println("1.통화를 종료합니다");
+				Exit = s1.nextInt();
+				if(Exit == 1) {
+					count--;
+					System.out.println("가능: "+count);
+					continue;
+				}
+			case 4:
+				System.out.println("종료합니다.");
+			}
+		}
+			
+		
+		
+		
+		
+		
+	}
+	
+}
