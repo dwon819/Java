@@ -1,0 +1,10 @@
+package Example;
+
+public class CustomCall {
+	static String name;
+	
+	CustomCall(String n){
+		this.name = n;
+	}
+
+}
