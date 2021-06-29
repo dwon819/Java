@@ -1,0 +1,29 @@
+package sub;
+
+public class Compare {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Pair<Integer,String> p1 = new Pair<Integer, String>(1, "사과");
+		Pair<Integer,String> p2 = new Pair<Integer,String>(1, "사과");
+		boolean result1 = Util.<Integer,String>compare(p1, p2);
+		System.out.println(result1);
+		
+		Pair<Integer,String> p3 = new Pair<>(1, "사과");
+		Pair<Integer,String> p4 = new Pair<>(1, "사과");
+		boolean result2 = Util.compare(p3, p4);
+		System.out.println(result2);
+		
+		
+		
+		
+		//Util.compare는 현재 같은 타입으로만 비교가 가능하다 따라서 비교대상이 같은 타입이여야 한다.
+		Pair<String,String> p5 = new Pair<>("1", "사과");
+		Pair<String,String> p6 = new Pair<>("사과", "김치");
+		boolean result3 = Util.compare(p5, p6);
+		System.out.println(result3);
+		
+
+	}
+
+}
