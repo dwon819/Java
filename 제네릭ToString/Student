@@ -1,0 +1,10 @@
+package sub2;
+
+public class Student extends Person {
+	public Student(String string) {
+		super(string);
+		// TODO 자동 생성된 생성자 스텁
+	}
+
+
+}
