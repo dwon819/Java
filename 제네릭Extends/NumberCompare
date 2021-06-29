@@ -1,0 +1,26 @@
+package sbu1;
+
+public class NumberCompare {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		Util util = new Util();
+		
+		int result = util.compare(2, 3);
+		
+		System.out.println(result);
+		
+		int result1 = Util.compare(5, 5);
+		System.out.println(result1);
+		
+		int result2 = Util.compare(5.6, 5);
+		System.out.println(result2);
+		
+//		String result = Util.compare("3","4");
+		//Int로 받기 때문에 안됨
+		
+		
+
+	}
+
+}
