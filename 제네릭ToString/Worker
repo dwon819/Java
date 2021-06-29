@@ -1,0 +1,10 @@
+package sub2;
+
+public class Worker extends Person {
+
+	public Worker(String string) {
+		super(string);
+		// TODO 자동 생성된 생성자 스텁
+	}
+
+}
