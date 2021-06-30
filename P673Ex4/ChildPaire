@@ -1,0 +1,10 @@
+package ex4;
+
+public class ChildPaire<K, V> extends Pair<K, V> {
+
+	public ChildPaire(K key, V value) {
+		super(key, value);
+		// TODO Auto-generated constructor stub
+	}
+
+}
