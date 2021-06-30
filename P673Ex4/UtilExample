@@ -1,0 +1,23 @@
+package ex4;
+
+public class UtilExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Pair<String,Integer> pair = new Pair<>("홍길동",35);
+		Integer age = Util.getValue(pair,"홍길동");
+		System.out.println(age);
+		
+		ChildPaire<String,Integer> childPair = new ChildPaire<>("홍삼원",20);
+		Integer childage = Util.getValue(childPair,"홍삼순");
+		System.out.println(childage);
+		
+//		OtherPair<String,Integer> otherPair = new OtherPair<>("홍길동",35);
+//		int otherAgee = Util.getValue(otherPair,"홍삼원");
+//		System.out.println(otherAgee);
+		
+	
+
+	}
+
+}
