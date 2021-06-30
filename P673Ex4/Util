@@ -1,0 +1,14 @@
+package ex4;
+
+public class Util<K,V> {
+	public static <K,V> V getValue(Pair<K,V> p, K k) {
+		if(p.getKey()==k) {
+			return p.getValue();
+		}else {
+			return null;
+		}
+		
+		
+	}
+
+}
