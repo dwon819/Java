@@ -1,0 +1,15 @@
+package com.Ramda;
+
+import com.Ramda.UsingThis.Inner;
+
+public class UsingTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+		UsingThis usingThis = new UsingThis();
+		UsingThis.Inner inner = usingThis.new Inner();
+		inner.method();
+
+	}
+
+}
