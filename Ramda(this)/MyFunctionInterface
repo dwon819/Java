@@ -1,0 +1,6 @@
+package com.Ramda;
+
+public interface MyFunctionInterface {
+	public void method();
+
+}
