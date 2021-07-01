@@ -1,0 +1,36 @@
+package com.Ramda1;
+
+public class Student {
+	private String name;
+	private int englishScore;
+	private int mathScore;
+	private int class_num;
+	int total =0;
+	
+	
+	public Student(int class_num,String name, int englishScore, int mathScore) {
+		this.class_num = class_num;
+		this.name = name;
+		this.englishScore = englishScore;
+		this.mathScore = mathScore;
+	}
+	
+	public int getClassName() {
+		return class_num;
+	}
+	public String getName() {
+		return name;
+	}
+	public int getEnglishScore() {
+		String eng = "영어";
+		return englishScore;
+	}
+	public int getMathScore() {
+		String math = "수학";
+		return mathScore;
+	}
+	public int getSubjectSum() {
+		return total = englishScore+mathScore;
+	}
+	
+}
