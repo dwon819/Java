@@ -1,0 +1,113 @@
+package com.Ramda1;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.function.ToIntFunction;
+
+public class FunctionExample1 {
+	public static Scanner s1 = new Scanner(System.in);
+	private static List<Student> list= Arrays.asList(
+			new Student(1,"홍길동", 90, 96),
+			new Student(2,"신용", 20, 94)
+			);
+	
+	public static void printString(int x,Function<Student,String> function) {
+		for(Student student : list) {
+			if(student.getClassName()==x)
+				System.out.println(function.apply(student)+"");
+		}
+		System.out.println();
+	}
+	
+	public static void printInt(int x,ToIntFunction<Student> function) {
+		for(Student student : list) {
+			if(student.getClassName()==x) {
+				System.out.println(function.applyAsInt(student)+"점");
+			}
+		}
+		System.out.println();
+	}
+	
+	public static void printsum_avg(int x,ToIntFunction<Student> function) {
+		int sum = 0;
+		int count = 0;
+		for(Student student : list) {
+			if(student.getClassName()==x) {
+					sum += function.applyAsInt(student);
+					count++;
+					}
+			}
+		
+		System.out.println(x+"반 "+"총점\n"+sum+"점");
+		System.out.println(x+"반 "+"평균\n"+sum/count+"점");
+		System.out.println();
+	}
+	public static void print_All_sum_avg(ToIntFunction<Student> function) {
+		int sum = 0;
+		int count = 0;
+		for(Student student : list) {
+			{
+				sum += function.applyAsInt(student);
+				count++;
+				}
+			}
+		
+		System.out.println("총점\n"+sum+"점");
+		System.out.println("평균\n"+sum/count+"점");
+		System.out.println();
+	}
+			
+//	public static void setAll() {
+//		while(true) {
+//			System.out.print("반을 입력해주세요:>> \n");
+//			int class_num = s1.nextInt();
+//			System.out.print("이름을 입력해주세요:>> \n");
+//			String name = s1.next();
+//			System.out.print("영어점수를 입력해주세요:>> \n");
+//			int eng = s1.nextInt();
+//			System.out.print("수학점수를 입력해주세요:>> \n");
+//			int math = s1.nextInt();
+//			Student i =new Student(class_num,name,eng,math);
+//			list.add(i);
+//			System.out.println("종료하십니까");
+//			System.out.println("1:yes 2:no");
+//			int end_num = s1.nextInt();
+//			if(end_num==1) {
+//				break;
+//			}else {
+//				continue;
+//			}
+//			
+//		}
+//	}
+
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+//		try{
+//			setAll();
+//		}catch(Exception e) {
+//			
+//		}
+		
+		System.out.print("반을 선택해주세요>>");
+		int class_num = s1.nextInt();
+		System.out.println("[학생이름]");
+		printString(class_num,t->t.getName());
+		System.out.println("[영어점수]");
+		printInt(class_num,t->t.getEnglishScore());
+		System.out.println("[수학점수]");
+		printInt(class_num,t->t.getMathScore());
+		System.out.println("[영어 총점]");
+		printsum_avg(class_num,t->t.getEnglishScore());
+		System.out.println("[수학 총점]");
+		printsum_avg(class_num,t->t.getMathScore());
+		System.out.println("[모든 총점]");
+		print_All_sum_avg(t->t.getSubjectSum());
+		
+	}
+
+}
