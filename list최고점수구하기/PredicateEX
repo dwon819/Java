@@ -23,6 +23,19 @@ public class PredicateEX{
 	   }
 	return max;
    }
+ //Function 예시
+// public static int max(ToIntFunction<Student> function) {
+//    int max = 0;
+//    int score = 0;
+//    
+//    for(Student s : list) {
+//       score = function.applyAsInt(s);
+//       if(max < score) {
+//          max = score;
+//       }
+//    }   
+//    return max;
+// }
    
    public static double avg(Predicate<Student> predicate) {
       int count = 0,sum = 0;
@@ -41,6 +54,8 @@ public class PredicateEX{
 		   else return b;
 	   });
 	   System.out.println("최고점수: "+max);
+//     int max = max(s ->s.getScore());
+//     System.out.println("최고 점수: "+max);
 	   
       double maleAvg = avg(t->t.getSex().equals("남자"));
       System.out.println("남자 평균: "+maleAvg);
