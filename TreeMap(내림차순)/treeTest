@@ -1,0 +1,141 @@
+package com.tree;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class treeTest {
+	public static void main(String[] args) {
+//		Set<Integer> set = new TreeSet<>();
+//		
+//		for(int i = 0; set.size() < 6; i++) {
+//			int num = (int)(Math.random() * 45) + 1;
+//			set.add(num);
+//			System.out.println(set);
+//		}
+		
+		TreeMap<String, Integer> map = new TreeMap<>();
+		map.put("신용권", 85);
+		map.put("신용권", 85);
+		map.put("가용권", 85);
+		map.put("마우루", 82);
+		map.put("치이권", 15);
+		map.put("프라크", 23);
+		map.put("소시지", 50);
+		System.out.println(map);
+		
+		Iterator it = map.entrySet().iterator();
+		
+		System.out.println("===기본정렬===");
+		
+		while(it.hasNext()) {
+			Map.Entry entry = (Map.Entry)it.next();
+			int value =((Integer)entry.getValue()).intValue();
+			System.out.println(entry.getKey()+" " + value);
+			}
+
+		
+		TreeMap<String, Integer> map1 = new TreeMap<String, Integer>();
+		map1.put("신용권", 85);
+		map1.put("신용권", 85);
+		map1.put("가용권", 85);
+		map1.put("마우루", 82);
+		map1.put("치이권", 15);
+		map1.put("프라크", 23);
+		map1.put("소시지", 50);
+	
+		
+		
+		
+		System.out.println("===내림차순===");
+		
+//		while(it1.hasNext()) {
+//			Map.Entry entry = (Map.Entry)it1.next();
+//			int value =((Integer)entry.getValue()).intValue();
+//			System.out.println(entry.getKey()+" " + value);
+//			}
+		TreeMap<String, Integer> sortedMap = sortMapByValue(map1);  
+		Iterator it1 = sortedMap.entrySet().iterator();
+		while(it1.hasNext()) {
+			Map.Entry entry = (Map.Entry)it1.next();
+			int value =((Integer)entry.getValue()).intValue();
+			System.out.println(entry.getKey()+" " + value);
+			}
+		
+
+	}
+	public static TreeMap<String, Integer> sortMapByValue(TreeMap<String, Integer> map){
+		Comparator<String> comparator = new ValueComparator(map);
+		//TreeMap is a map sorted by its keys. 
+		//The comparator is used to sort the TreeMap by keys. 
+		TreeMap<String, Integer> result = new TreeMap<String, Integer>(comparator);
+		result.putAll(map);
+		return result;
+	}
+	static class ValueComparator implements Comparator<String>{
+		 
+		TreeMap<String, Integer> map = new TreeMap<String, Integer>();
+	 
+		public ValueComparator(TreeMap<String, Integer> map){
+			this.map.putAll(map);
+		}
+	 
+		@Override
+		public int compare(String s1, String s2) {
+			if(map.get(s1) >= map.get(s2)){
+				return -1;
+			}else{
+				return 1;
+			}	
+		}
+	}
+//	 class ValueComprator implements Comparator<Integer>{
+//		 TreeMap<String, Integer> map = new TreeMap<>();
+//
+//		
+//		@Override
+//		public int compare(Integer o1, Integer o2) {
+//			// TODO 자동 생성된 메소드 스텁
+//			if(map.get(o1)>=map.get(o2)) {
+//				return -1;
+//			}else
+//			return 1;
+//		}
+
+//		@Override
+//		public int compare(Object o1, Object o2) {
+//			// TODO 자동 생성된 메소드 스텁
+//			if(o1 instanceof Map.Entry && o2 instanceof Map.Entry) {
+//				Map.Entry e1 = (Map.Entry)o1;
+//				Map.Entry e2 = (Map.Entry)o2;
+//				int v1 = ((Integer)e1.getValue()).intValue();
+//				int v2 = ((Integer)e2.getValue()).intValue();
+//				return v2-v1;
+//			}
+//			return -1;
+//			
+//			//오름차순 : o1 - o2
+//			//내림차순 : o2 - o1
+//		}
+
+//		@Override
+//		public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+//			if(o1 instanceof Map.Entry && o2 instanceof Map.Entry) {
+//				Map.Entry e1 = (Map.Entry)o1;
+//				Map.Entry e2 = (Map.Entry)o2;
+//				int v1 = ((Integer)e1.getValue()).intValue();
+//				int v2 = ((Integer)e2.getValue()).intValue();
+//				return v2-v1;
+//			}
+//			return -1;
+//		}
+		
+		
+	}
+
+
