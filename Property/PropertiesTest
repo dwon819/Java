@@ -1,0 +1,66 @@
+package com.tree;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Properties;
+
+public class PropertiesTest {
+
+	public static void main(String[] args) {
+		// TODO 자동 생성된 메소드 스텁
+//		Properties prop= new Properties();
+//		prop.setProperty("timeout","30");
+//		prop.setProperty("language","kr");
+//		prop.setProperty("shout","30desi");
+//		prop.setProperty("live","30year");
+//		prop.setProperty("tiktok","30sec");
+//		prop.setProperty("semi","30de");
+//		prop.setProperty("denim","30dez");
+//		prop.setProperty("size","XL");
+//		System.out.println(prop);
+//		
+//		Enumeration<?> e =  prop.propertyNames();
+//		
+//		while(e.hasMoreElements()) {
+//			String n = (String) e.nextElement();
+//			System.out.println(n+" : "+prop.getProperty(n));
+//		}
+		
+		Properties prop = new Properties();
+		
+		try {
+			prop.load(new FileInputStream("src/com/tree/input.txt"));
+		}catch(FileNotFoundException e){
+			
+		}catch (IOException e) {
+			// TODO 자동 생성된 catch 블록
+			e.printStackTrace();
+		}
+		
+		System.out.println(prop.getProperty("name")+prop.getProperty("data"));
+		System.out.println(prop.getProperty("data"));
+		
+		
+		
+		String[] data = prop.getProperty("data").split(",");
+		int max = Integer.parseInt(data[0]), min = Integer.parseInt(data[0]), sum = 0,avg = 0;
+		for(int i = 0; i < data.length; i++) {
+			int intValue = Integer.parseInt(data[i]);
+			if(max < intValue) {
+				max=intValue;
+			}else if(min>intValue) {
+				min = intValue;
+			}
+			sum += intValue;
+		}
+		avg = sum / data.length;
+		
+		System.out.println("max: "+max);
+		System.out.println("min: "+min);
+		System.out.println("sum: "+sum);
+		System.out.println("avg: "+avg);
+	}
+
+}
