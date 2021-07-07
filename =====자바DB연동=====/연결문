@@ -1,0 +1,57 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class JdbcCon {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connection con = null;
+		ResultSet rs = null;
+		PreparedStatement psmt = null; //SQL 구문을 실행하는 역할(전달역할)
+	
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				String url = "jdbc:oracle:thin:@localhost:1521:xe";
+				String id = "scott";
+				String pw = "TIGER";
+				
+				con = DriverManager.getConnection(url,id,pw);
+				System.out.println("DB 연결 성공");
+				
+				String sql = "select * from dept";
+//				String sql = "select * from dept where deptno = ?";
+//				String sql = "select * from dept where loc = ?";
+				psmt = con.prepareStatement(sql); //문자열 형태로 sql문 작성 넣기
+				
+//				psmt.setInt(1, 10);//위에 psmt ?로 와일드 카드를 했기때문에 물음표의 값을 지정해줄수 있다
+				//1,10 --> 1째 물음표에 10을 넣어라
+//				psmt.setString(1, "DALLAS");
+				
+				
+				rs = psmt.executeQuery(); //ResultSet에 값을 저장
+				System.out.println("부서번호\t  부서명 \t\t 근무지역");
+				while(rs.next()) {
+//					int deptno = rs.getInt("deptno");//colume명을 입력
+//					String dname = rs.getString("dname");
+//					String loc = rs.getString("loc");
+					int deptno = rs.getInt(1);
+					String dname = rs.getString(2);
+					String loc = rs.getString(3);
+					System.out.println(deptno+"\t"+dname+"   \t"+loc);
+				}
+				
+			}catch(SQLException e) {
+				e.printStackTrace();
+				System.out.println("DB 연결 실패");
+			}catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				System.out.println("DB 사용 불가");
+			}
+	
+	}
+
+}
