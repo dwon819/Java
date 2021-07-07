@@ -13,34 +13,71 @@ public class JdbcCon {
 		PreparedStatement psmt = null; //SQL 구문을 실행하는 역할(전달역할)
 	
 			try {
+//----------------------DB접속----------------------------------------------------------------------------------------					
+
 				Class.forName("oracle.jdbc.driver.OracleDriver");
 				String url = "jdbc:oracle:thin:@localhost:1521:xe";
 				String id = "scott";
 				String pw = "TIGER";
-				
 				con = DriverManager.getConnection(url,id,pw);
 				System.out.println("DB 연결 성공");
+//----------------------sql문 검색 wildcard식----------------------------------------------------------------------------------------					
+
+//				String sql = "insert into emp01 values (?,?,?,?,?,?,?,?)";
+//				psmt = con.prepareStatement(sql);
+//				psmt.setInt(1, 1111);
+//				psmt.setString(2,"홍길동");
+//				psmt.setString(3, "MANAGER");
+//				psmt.setInt(4, 7788);
+//				psmt.setString(5, "21/07/07");
+//				psmt.setInt(6, 2000);
+//				psmt.setString(7, "");
+//				psmt.setInt(8, 10);				
+
+//----------------------sql문 실행문----------------------------------------------------------------------------------------					
+//				psmt.executeUpdate();//insert , update , delete 를 사용할때는 executeUpdate사용
+//				System.out.println("데이터 삽입 성공");
 				
-				String sql = "select * from dept";
-//				String sql = "select * from dept where deptno = ?";
-//				String sql = "select * from dept where loc = ?";
+//				String sql = "insert into emp01";
+//				sql +="values(111,'홍길동','MANAGER',7788,'21/07/07',2000.'',10)";
+				
+//				String sql = "select * from emp01 where deptno = ?";
+				String sql = "select * from emp01";
+////				String sql = "select * from dept where deptno = ?";
+////				String sql = "select * from dept where loc = ?";
 				psmt = con.prepareStatement(sql); //문자열 형태로 sql문 작성 넣기
-				
+//				
 //				psmt.setInt(1, 10);//위에 psmt ?로 와일드 카드를 했기때문에 물음표의 값을 지정해줄수 있다
 				//1,10 --> 1째 물음표에 10을 넣어라
 //				psmt.setString(1, "DALLAS");
 				
+//				psmt.setInt(1, 30);
+				
 				
 				rs = psmt.executeQuery(); //ResultSet에 값을 저장
-				System.out.println("부서번호\t  부서명 \t\t 근무지역");
+				System.out.println("사원번호\t  사원명 \t 직급 \t 매니져 \t 입사일 \t 급여 \t 성과급 \t 부서번호");
 				while(rs.next()) {
+//----------------------컬럼명으로로 출력----------------------------------------------------------------------------------------					
 //					int deptno = rs.getInt("deptno");//colume명을 입력
 //					String dname = rs.getString("dname");
 //					String loc = rs.getString("loc");
-					int deptno = rs.getInt(1);
-					String dname = rs.getString(2);
-					String loc = rs.getString(3);
-					System.out.println(deptno+"\t"+dname+"   \t"+loc);
+//----------------------인덱스로 출력-------------------------------------------------------------------------------------------
+//					int deptno = rs.getInt(1);
+//					String dname = rs.getString(2);
+//					String loc = rs.getString(3);
+					
+					int empno = rs.getInt(1);
+		            String ename = rs.getString(2);
+		            String job = rs.getString(3);
+		            int mgr = rs.getInt(4);
+		            String hiredate = rs.getString(5);
+		            int sal = rs.getInt(6);
+		            String comm = rs.getString(7);
+		            int deptno = rs.getInt(8);
+
+//					System.out.println(deptno+"\t"+dname+"      \t"+loc);
+		            System.out.println(empno + "      \t" + ename + "      \t" + job + "      \t" + mgr + "                 \t" + hiredate + "      \t" + sal + "      \t" + comm + "      \t" + deptno);
+
 				}
 				
 			}catch(SQLException e) {
